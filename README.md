@@ -38,18 +38,72 @@ Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
 
+![image](https://github.com/Vigneshvikiii/FULL_ADDER_SUBTRACTOR/assets/147474483/6ac14b6d-9e86-4853-a3a5-e1945201732d)
+
+
 **Procedure**
 
-Write the detailed procedure here
+FULL ADDER
+
+1.Open Quartus II and create a new project.
+
+2.Use schematic design entry to draw the full adder circuit.
+
+3.The circuit consists of XOR, AND, and OR gates.
+
+4.Compile the design, verify its functionality through simulation.
+
+5.Implement the design on the target device and program it.
+
+FULL SUBTRACTOR 1.Follow the same steps as for the full adder.
+
+2.Draw the full subtractor circuit using schematic design.
+
+3.The circuit includes XOR, AND, OR gates to perform subtraction.
+
+4.Compile, simulate, implement, and program the design similarly to the full adder.
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+ Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. 
+ Developed by: Vignesh S 
+ RegisterNumber: 212223230240
+ ~~~
+FULL ADDER :
+ module fulladd_top(a,b,cin,sum,carry);
+input a,b,cin;
+output sum,carry;
+wire w1,w2,w3,w4;       
+xor(w1,a,b);
+xor(sum,w1,cin);        
+and(w2,a,b);
+and(w3,b,cin);
+and(w4,cin,a);
+or(carry,w2,w3,w4);
+endmodule
+~~~
+
+FULL SUBTRACTOR :
+~~~
+
+module fullsub_top(a,b,Bin,BO,DIFF);
+input a,b,Bin;
+output BO,DIFF;
+assign DIFF = a ^ b ^ Bin;
+assign BO = (a & b) | ((a ^ b) & Bin);
+endmodule
+~~~
 
 **RTL Schematic**
+![image](https://github.com/Vigneshvikiii/FULL_ADDER_SUBTRACTOR/assets/147474483/1ebd5efa-dfba-4f65-bf0e-201af1f57f18)
+
 
 **Output Timing Waveform**
+![image](https://github.com/Vigneshvikiii/FULL_ADDER_SUBTRACTOR/assets/147474483/9faeefa9-83be-4723-87f8-71029f067160)
+
+
+![image](https://github.com/Vigneshvikiii/FULL_ADDER_SUBTRACTOR/assets/147474483/b9156759-51e1-4aeb-8d53-51cca00ed081)
+
 
 **Result:**
 
